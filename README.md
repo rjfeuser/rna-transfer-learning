@@ -120,9 +120,15 @@ print(f"Acurácia final: {accuracy * 100:.2f}%")
 
 ### Como o código funciona:
 
-1.  **Baixa e extrai as imagens:** O código acessa o seu repositório no GitHub para baixar o arquivo zip com as imagens.
-2.  **Pré-processamento:** Ele utiliza o `ImageDataGenerator` para carregar as imagens, redimensioná-las e aplicar técnicas de **data augmentation** (aumentar artificialmente o número de imagens com rotações, zoom, etc.).
-3.  **Carrega o modelo base:** O modelo `MobileNetV2` é carregado com os pesos pré-treinados do ImageNet.
-4.  **Congela as camadas:** As camadas do `MobileNetV2` são congeladas, ou seja, elas não serão alteradas durante o treinamento. Isso preserva o conhecimento que o modelo já tem.
-5.  **Adiciona novas camadas:** Uma nova camada de saída é adicionada ao final do modelo. Essa camada é responsável por aprender a classificar as novas categorias de imagens.
-6.  **Treina o modelo:** Apenas a nova camada de saída é treinada, o que é muito mais rápido e eficiente.
+1.  **Baixa e extrai as imagens:**
+        O código acessa o seu repositório no GitHub para baixar o arquivo zip com as imagens.
+2.  **Pré-processamento:**
+        Ele utiliza o `ImageDataGenerator` para carregar as imagens, redimensioná-las e aplicar técnicas de **data augmentation** (aumentar artificialmente o número de imagens com rotações, zoom, etc.).
+3.  **Carrega o modelo base:**
+        O modelo `MobileNetV2` é carregado com os pesos pré-treinados do ImageNet.
+4.  **Congela as camadas:**
+        As camadas do `MobileNetV2` são congeladas, ou seja, elas não serão alteradas durante o treinamento. Isso preserva o conhecimento que o modelo já tem.
+5.  **Adiciona novas camadas:**
+        Uma nova camada de saída é adicionada ao final do modelo. Essa camada é responsável por aprender a classificar as novas categorias de imagens.
+6.  **Treina o modelo:**
+        Apenas a nova camada de saída é treinada, o que é muito mais rápido e eficiente.
