@@ -43,3 +43,20 @@ Você pode executar o código abaixo diretamente no **Google Colab**. Ele fará 
         Uma nova camada de saída é adicionada ao final do modelo. Essa camada é responsável por aprender a classificar as novas categorias de imagens.
 6.  **Treina o modelo:**
         Apenas a nova camada de saída é treinada, o que é muito mais rápido e eficiente.
+
+
+## Projeto para redução de dimensionalidade em imagens (Binarização)
+**Como o Código Funciona**
+Este notebook demonstra a binarização de imagens usando um modelo de machine learning simples. O processo é dividido em quatro etapas principais:
+
+**Instalação e Importação:** O código garante que as bibliotecas necessárias (opencv-python e scikit-learn) estejam instaladas no ambiente do Google Colab e as importa para o script.
+
+**Carregamento da Imagem:** Uma imagem em tons de cinza é carregada para ser processada. No Colab, o script usa wget para baixar uma imagem de uma URL, mas você pode facilmente adaptá-lo para usar uma imagem que você mesmo fez o upload.
+
+**Preparação dos Dados de Treinamento:** Para treinar um modelo de machine learning, precisamos de um conjunto de dados de **"verdade"** (ground truth). Neste caso, o código cria esses dados de forma simples:
+
+**Features (X):** Os valores de cada pixel da imagem original.
+
+**Labels (y):** Os valores binários (0 ou 1) que o modelo deve aprender a prever. Estes são gerados inicialmente aplicando um limiar fixo.
+
+**Treinamento e Aplicação do Modelo:** Um classificador k-NN (k-Nearest Neighbors), um dos modelos de machine learning mais simples e eficazes, é treinado com os dados de treino. Após o treinamento, o modelo é usado para prever a binarização na imagem completa.
